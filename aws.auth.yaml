@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::910103924863:role/eksctl-spot-cluster-nodegroup-spot-NodeInstanceRole-rYuQanErtXdr
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - userarn: arn:aws:iam::752692907119:user/roboshop-admin
+      username: roboshop-admin
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-10-18T15:46:54Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1270"
+  uid: 2425e7df-9078-45fe-a30e-5fced6d95466
